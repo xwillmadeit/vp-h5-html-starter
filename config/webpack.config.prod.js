@@ -4,7 +4,10 @@ const webpack = require('webpack')
 const paths = require('./paths')
 
 module.exports = {
-  entry: paths.appIndexJs,
+  entry: {
+    app: paths.appIndexJs,
+    vendor: [paths.flexibleJs, 'jquery']
+  },
   output: {
     path: paths.appBuild,
     filename: 'js/[name].[chunkhash:6].js'
@@ -62,7 +65,10 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery'
     }),
-    new ExtractTextPlugin('css/style.[contenthash:6].css')
+    new ExtractTextPlugin('css/style.[contenthash:6].css'),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest']
+    })
   ],
   devtool: 'hidden-source-map'
 }

@@ -7,5 +7,6 @@ module.exports = {
   appFavicon: resolveApp('src/images/favicon.ico'),
   appHtml: resolveApp('src/index.html'),
   appIndexJs: resolveApp('src/js/index.js'),
+  flexibleJs: resolveApp('src/js/flexible.js'),
   appNodeModules: resolveApp('node_modules')
 }
