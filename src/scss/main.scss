@@ -1,0 +1,15 @@
+@import "theme";
+@import "helper";
+@import "common";
+
+.banner {
+  width: 100%;
+  height: px2rem(299px);
+}
+
+.box {
+  width: px2rem(200px);
+  height: px2rem(200px);
+  background-color: salmon;
+  @include font-size(36px);
+}
